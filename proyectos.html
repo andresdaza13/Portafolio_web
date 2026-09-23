@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Proyectos — Andrés Daza</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/variables.css">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/components.css">
+<link rel="stylesheet" href="css/animations.css">
+</head>
+<body>
+<div data-include="partials/nav.html"></div>
+
+<section>
+  <h1>Proyectos</h1>
+  <div id="lista-proyectos"><p>Cargando proyectos…</p></div>
+</section>
+
+<div data-include="partials/footer.html"></div>
+<script type="module">
+  import { includeHTML } from './js/includes.js';
+  import { initReveal } from './js/reveal.js';
+  import { getProjects } from './js/data.js';
+
+  await includeHTML();
+
+  const contenedor = document.getElementById('lista-proyectos');
+  const proyectos = await getProjects();
+
+  contenedor.innerHTML = proyectos.map((p) => `
+    <div class="project reveal">
+      <h3>${p.titulo} <span class="year">${p.anio || ''}</span></h3>
+      <p>${p.desc || ''}</p>
+      <div class="stack">${p.stack || ''}</div>
+      <div class="proj-links">${p.link ? `<a href="${p.link}" target="_blank" rel="noopener">Ver repositorio →</a>` : ''}</div>
+    </div>
+  `).join('');
+
+  initReveal('.reveal');
+</script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+/* ============================================================
+   Formularios: login de admin y CRUD de proyectos
+============================================================ */
+.form-panel {
+  max-width: 420px; margin: 0 auto; padding: 2rem; border: 1px solid var(--line);
+  border-radius: var(--radius); background: var(--bg-panel);
+}
+.form-panel label { display: block; font-family: var(--font-mono); font-size: .8rem; color: var(--ink-dim); margin: 1rem 0 .35rem; }
+.form-panel input, .form-panel textarea {
+  width: 100%; padding: .65rem .8rem; background: var(--bg); color: var(--ink);
+  border: 1px solid var(--line); border-radius: var(--radius); font-family: var(--font-sans); font-size: .95rem;
+}
+.form-panel textarea { resize: vertical; min-height: 80px; }
+.form-panel button { margin-top: 1.5rem; width: 100%; cursor: pointer; border: none; }
+.form-error { color: #FF6B6B; font-size: .85rem; margin-top: .75rem; min-height: 1.2em; }
+
+.admin-item {
+  border: 1px solid var(--line); border-radius: var(--radius); padding: 1.25rem;
+  margin-bottom: 1rem; display: grid; gap: .4rem;
+}
+.admin-item .admin-actions { display: flex; gap: .75rem; margin-top: .5rem; }
+.admin-item .admin-actions button {
+  font-family: var(--font-mono); font-size: .8rem; background: none; border: 1px solid var(--line);
+  color: var(--ink-dim); padding: .4rem .8rem; border-radius: var(--radius); cursor: pointer;
+}
+.admin-item .admin-actions button:hover { border-color: var(--accent); color: var(--accent); }
+.admin-item .admin-actions .danger:hover { border-color: #FF6B6B; color: #FF6B6B; }
+
+.admin-topbar { display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem; }
+.hidden { display: none !important; }

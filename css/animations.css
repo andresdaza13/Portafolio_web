@@ -1,0 +1,37 @@
+/* ============================================================
+   ANIMACIONES
+   Centralizar los keyframes aquí evita que queden dispersos
+   entre componentes; cualquier elemento puede usarlos.
+============================================================ */
+
+/* Entrada escalonada del hero (único momento "orquestado") */
+@keyframes rise { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
+.hero .kicker  { opacity: 0; animation: rise .7s .1s  ease forwards; }
+.hero h1       { opacity: 0; animation: rise .8s .25s ease forwards; }
+.hero p.lead   { opacity: 0; animation: rise .8s .45s ease forwards; }
+.hero .links   { opacity: 0; animation: rise .8s .6s  ease forwards; }
+.avatar-wrap   { opacity: 0; animation: rise .9s .5s  ease forwards; }
+
+/* Avatar: flotación suave */
+@keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+.avatar-svg { animation: float 5s ease-in-out infinite; }
+
+/* Avatar: anillo orbital girando */
+@keyframes spin { to { transform: rotate(360deg); } }
+.avatar-ring { animation: spin 14s linear infinite; }
+
+/* Avatar: parpadeo periódico (no constante — más natural) */
+@keyframes blink {
+  0%, 92%, 100% { transform: scaleY(1); }
+  95% { transform: scaleY(0.1); }
+}
+.avatar-blink { animation: blink 4.5s ease-in-out infinite; }
+
+/* Avatar: punto de datos con pulso de opacidad */
+@keyframes pulse { 0%, 100% { opacity: .4; } 50% { opacity: 1; } }
+.avatar-dot circle:last-child { animation: pulse 2.2s ease-in-out infinite; }
+
+@media (prefers-reduced-motion: reduce) {
+  .hero .kicker, .hero h1, .hero p.lead, .hero .links, .avatar-wrap { animation: none; opacity: 1; }
+  .avatar-svg, .avatar-ring, .avatar-blink, .avatar-dot circle:last-child { animation: none; }
+}

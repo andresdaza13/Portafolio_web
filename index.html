@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Andrés Daza — Ingeniería de Software</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/variables.css">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/components.css">
+<link rel="stylesheet" href="css/animations.css">
+</head>
+<body>
+<div data-include="partials/nav.html"></div>
+
+<section class="hero">
+  <div class="hero-text">
+    <div class="kicker">Estudiante de Ingeniería de Software</div>
+    <h1>Andrés Daza</h1>
+    <p class="lead">Hola, soy Andrés Daza,  estudiante de Ingeniería de Software en la  Universidad del Cauca, Colombia.
+    </p>
+    <div class="links">
+      <a class="btn primary" href="proyectos.html">Ver proyectos</a>
+      <a class="btn" href="sobre-mi.html">Sobre mí</a>
+    </div>
+  </div>
+
+  <div class="avatar-wrap">
+    <svg class="avatar-svg" viewBox="0 0 220 220" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <circle class="avatar-ring" cx="110" cy="110" r="95" fill="none" stroke="var(--line)" stroke-width="1.5" stroke-dasharray="3 7"/>
+      <g class="avatar-dot" style="transform: rotate(35deg)"><circle cx="110" cy="15" r="4" fill="var(--accent)"/></g>
+      <g class="avatar-dot" style="transform: rotate(195deg)"><circle cx="110" cy="15" r="3" fill="var(--accent)"/></g>
+      <circle cx="110" cy="110" r="55" fill="var(--bg-panel)" stroke="var(--accent)" stroke-width="2"/>
+      <g class="avatar-blink">
+        <rect x="90" y="102" width="10" height="12" rx="3" fill="var(--ink)"/>
+        <rect x="122" y="102" width="10" height="12" rx="3" fill="var(--ink)"/>
+      </g>
+      <path d="M95 132 Q110 142 125 132" stroke="var(--accent)" stroke-width="3" fill="none" stroke-linecap="round"/>
+    </svg>
+  </div>
+</section>
+
+<div data-include="partials/footer.html"></div>
+<script type="module" src="js/main.js"></script>
+</body>
+</html>

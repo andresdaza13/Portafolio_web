@@ -1,0 +1,32 @@
+/* ============================================================
+   TOKENS DE DISEÑO
+   Todo color, tipografía y medida clave vive aquí. El resto de
+   los archivos CSS solo consumen estas variables — así cambiar
+   el tema completo es editar este único archivo.
+============================================================ */
+:root {
+  /* Color */
+  --bg: #0A0E16;
+  --bg-panel: #121828;
+  --ink: #ECEEF3;
+  --ink-dim: #8A93A6;
+  --accent: #7C6FFF;
+  --accent-soft: rgba(124, 111, 255, 0.14);
+  --line: #212A3D;
+
+  /* Tipografía */
+  --font-display: 'Space Grotesk', sans-serif;
+  --font-sans: 'IBM Plex Sans', sans-serif;
+  --font-mono: 'IBM Plex Mono', monospace;
+
+  /* Layout */
+  --maxw: 920px;
+  --radius: 6px;
+}
+
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme="dark"]) {
+    --bg: #F4F5F9; --bg-panel: #FFFFFF; --ink: #10141F; --ink-dim: #5B6478;
+    --accent: #5B4FE0; --accent-soft: rgba(91, 79, 224, 0.1); --line: #DDE1EC;
+  }
+}

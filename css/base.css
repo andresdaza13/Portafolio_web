@@ -1,0 +1,26 @@
+/* ============================================================
+   BASE: reset mínimo + tipografía + estructura de página
+============================================================ */
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0; background: var(--bg); color: var(--ink);
+  font-family: var(--font-sans); line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  background-image:
+    linear-gradient(var(--line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--line) 1px, transparent 1px);
+  background-size: 64px 64px;
+  background-attachment: fixed;
+  background-position: center;
+}
+a { color: inherit; }
+section { max-width: var(--maxw); margin: 0 auto; padding: 6rem 1.5rem; }
+h1, h2, h3 { font-family: var(--font-display); font-weight: 600; margin: 0 0 1rem; letter-spacing: -0.01em; }
+p { color: var(--ink-dim); max-width: 62ch; }
+::selection { background: var(--accent); color: white; }
+a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+
+@media (max-width: 640px) {
+  section { padding: 4rem 1.25rem; }
+}
